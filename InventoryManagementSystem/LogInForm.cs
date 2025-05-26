@@ -61,5 +61,10 @@ namespace InventoryManagementSystem
             if ( MessageBox.Show("Exit Application","Confirm",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
                 Application.Exit();
         }
+
+        private void LogInForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

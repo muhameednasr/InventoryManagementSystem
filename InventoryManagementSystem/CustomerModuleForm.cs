@@ -13,8 +13,9 @@ namespace InventoryManagementSystem
 {
     public partial class CustomerModuleForm : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\pc\Documents\dbIMS.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection con = new SqlConnection("data source=. ; initial catalog = dbIMS ; integrated security = true");
         SqlCommand cm = new SqlCommand();
+
         public CustomerModuleForm()
         {
             InitializeComponent();
@@ -64,5 +65,24 @@ namespace InventoryManagementSystem
         {
             ActiveForm.Close();
         }
+
+        private void txtCname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCphone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public bool IsUpdateClicked = false;
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            IsUpdateClicked = true;
+            this.Close();
+        }
+
     }
 }

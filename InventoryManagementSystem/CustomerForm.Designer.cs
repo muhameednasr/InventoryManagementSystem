@@ -51,19 +51,22 @@
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 384);
+            this.panel1.Location = new System.Drawing.Point(0, 400);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(990, 66);
+            this.panel1.Size = new System.Drawing.Size(991, 81);
             this.panel1.TabIndex = 2;
             // 
             // btnAdd
             // 
+            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnAdd.IhoverImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.IhoverImage")));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageNormal = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageNormal")));
-            this.btnAdd.Location = new System.Drawing.Point(671, 11);
+            this.btnAdd.Location = new System.Drawing.Point(930, 0);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(41, 43);
+            this.btnAdd.Size = new System.Drawing.Size(61, 81);
             this.btnAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnAdd.TabIndex = 1;
             this.btnAdd.TabStop = false;
@@ -74,15 +77,21 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 20);
+            this.label1.Location = new System.Drawing.Point(16, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 19);
+            this.label1.Size = new System.Drawing.Size(201, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Manage Customers";
             // 
             // dgvCustomer
             // 
             this.dgvCustomer.AllowUserToAddRows = false;
+            this.dgvCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvCustomer.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvCustomer.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
@@ -101,12 +110,13 @@
             this.Column4,
             this.Edit,
             this.Delete});
-            this.dgvCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCustomer.EnableHeadersVisualStyles = false;
             this.dgvCustomer.Location = new System.Drawing.Point(0, 0);
+            this.dgvCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCustomer.Name = "dgvCustomer";
             this.dgvCustomer.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvCustomer.Size = new System.Drawing.Size(990, 450);
+            this.dgvCustomer.RowHeadersWidth = 51;
+            this.dgvCustomer.Size = new System.Drawing.Size(990, 400);
             this.dgvCustomer.TabIndex = 3;
             this.dgvCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellContentClick);
             // 
@@ -114,53 +124,60 @@
             // 
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column5.HeaderText = "No";
+            this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
-            this.Column5.Width = 50;
+            this.Column5.Width = 59;
             // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column1.HeaderText = "Customer id";
+            this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 104;
+            this.Column1.Width = 125;
             // 
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column2.HeaderText = "Name";
+            this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             // 
             // Column4
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column4.HeaderText = "Phone";
+            this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
-            this.Column4.Width = 70;
+            this.Column4.Width = 85;
             // 
             // Edit
             // 
             this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Edit.HeaderText = "";
             this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
+            this.Edit.MinimumWidth = 6;
             this.Edit.Name = "Edit";
-            this.Edit.Width = 5;
+            this.Edit.Width = 6;
             // 
             // Delete
             // 
             this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Delete.HeaderText = "";
             this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.MinimumWidth = 6;
             this.Delete.Name = "Delete";
-            this.Delete.Width = 5;
+            this.Delete.Width = 6;
             // 
             // CustomerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(990, 450);
+            this.ClientSize = new System.Drawing.Size(991, 481);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvCustomer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CustomerForm";
             this.Text = "CustomerForm";
             this.panel1.ResumeLayout(false);

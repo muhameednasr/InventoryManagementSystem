@@ -73,7 +73,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(10, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 19);
+            this.label1.Size = new System.Drawing.Size(184, 23);
             this.label1.TabIndex = 1;
             this.label1.Text = "Customer Module";
             // 
@@ -105,6 +105,7 @@
             this.btnUpdate.TabIndex = 24;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
@@ -125,8 +126,9 @@
             // 
             this.txtCphone.Location = new System.Drawing.Point(168, 142);
             this.txtCphone.Name = "txtCphone";
-            this.txtCphone.Size = new System.Drawing.Size(536, 22);
+            this.txtCphone.Size = new System.Drawing.Size(536, 26);
             this.txtCphone.TabIndex = 22;
+            this.txtCphone.TextChanged += new System.EventHandler(this.txtCphone_TextChanged);
             // 
             // label5
             // 
@@ -134,7 +136,7 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(108, 144);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 16);
+            this.label5.Size = new System.Drawing.Size(72, 21);
             this.label5.TabIndex = 21;
             this.label5.Text = "Phone :";
             // 
@@ -142,8 +144,9 @@
             // 
             this.txtCname.Location = new System.Drawing.Point(168, 83);
             this.txtCname.Name = "txtCname";
-            this.txtCname.Size = new System.Drawing.Size(536, 22);
+            this.txtCname.Size = new System.Drawing.Size(536, 26);
             this.txtCname.TabIndex = 16;
+            this.txtCname.TextChanged += new System.EventHandler(this.txtCname_TextChanged);
             // 
             // label2
             // 
@@ -151,7 +154,7 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(104, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 16);
+            this.label2.Size = new System.Drawing.Size(76, 21);
             this.label2.TabIndex = 15;
             this.label2.Text = " Name :";
             // 
@@ -161,13 +164,13 @@
             this.lblCid.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCid.Location = new System.Drawing.Point(43, 229);
             this.lblCid.Name = "lblCid";
-            this.lblCid.Size = new System.Drawing.Size(84, 16);
+            this.lblCid.Size = new System.Drawing.Size(107, 21);
             this.lblCid.TabIndex = 26;
             this.lblCid.Text = "Customer id";
             // 
             // CustomerModuleForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 277);
             this.Controls.Add(this.lblCid);
@@ -181,7 +184,7 @@
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CustomerModuleForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CustomerModuleForm";

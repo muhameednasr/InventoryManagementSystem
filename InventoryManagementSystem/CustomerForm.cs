@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace InventoryManagementSystem
 {
     public partial class CustomerForm : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\pc\Documents\dbIMS.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection con = new SqlConnection("data source=. ; initial catalog = dbIMS ; integrated security = true");
+        //new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\pc\Documents\dbIMS.mdf;Integrated Security=True;Connect Timeout=30");
         SqlCommand cm = new SqlCommand();
         SqlDataReader dr;
         public CustomerForm()
@@ -34,9 +36,27 @@ namespace InventoryManagementSystem
                 customerModule.btnSave.Enabled = false;
                 customerModule.btnUpdate.Enabled = true;
                 customerModule.btnClear.Enabled = false;
+
                 customerModule.ShowDialog();
 
+                // تحقق إذا تم الضغط على زر Update
+                if (customerModule.IsUpdateClicked)
+                {
+                    string cid = dgvCustomer.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    cm = new SqlCommand("UPDATE tbCustomer SET cname = @cname, cphone = @cphone WHERE cid = @cid", con);
+                    cm.Parameters.AddWithValue("@cname", customerModule.txtCname.Text);
+                    cm.Parameters.AddWithValue("@cphone", customerModule.txtCphone.Text);
+                    cm.Parameters.AddWithValue("@cid", cid);
+
+                    con.Open();
+                    cm.ExecuteNonQuery();
+                    con.Close();
+
+                    MessageBox.Show("Customer has been UPDATED successfully!!");
+                    customerModule.clear();
+                }
             }
+
             else if (CcolName == "Delete")
             {
                 if (MessageBox.Show("Are you sure you want to delete this user?", "Delete Record ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
